@@ -23,7 +23,6 @@ async def command_start_handler(message: Message) -> None:
 
 @dp.message()
 async def process_language(message: Message) -> None:
-
     try:
         txt = message.text.casefold().split(" ")
         word1 = txt[0]
