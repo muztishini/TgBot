@@ -42,7 +42,6 @@ async def process_language(message: Message) -> None:
             sunset_timestamp = datetime.fromtimestamp(data["sys"]["sunset"])
             length_of_the_day = datetime.fromtimestamp(data["sys"]["sunset"]) - datetime.fromtimestamp(
                 data["sys"]["sunrise"])
-
             await message.reply(f"***{datetime.now().strftime('%Y-%m-%d %H:%M')}***\n"
                                 f"Погода в городе: {city}\nТемпература: {cur_weather}C \n"
                                 f"Влажность: {humidity}%\nДавление: {pressure} мм.рт.ст\nВетер: {wind} м/с\n"
