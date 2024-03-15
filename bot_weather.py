@@ -71,7 +71,6 @@ async def process_language(message: Message) -> None:
                 timezone_offset_seconds = timezone
                 time_with_timezone = time + timedelta(seconds=timezone_offset_seconds)
                 time_with_timezone_str = time_with_timezone.strftime(time_format)
-
                 temp = item['main']['temp']
                 weather_d = item['weather'][0]['description']
                 wind_speed = item['wind']['speed']
