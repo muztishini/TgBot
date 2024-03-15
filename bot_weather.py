@@ -67,7 +67,6 @@ async def process_language(message: Message) -> None:
             for item in data['list']:
                 data_time = item['dt_txt']
                 timezone = data['city']['timezone']
-
                 time_str = data_time
                 time_format = "%Y-%m-%d %H:%M:%S"
                 time = datetime.strptime(time_str, time_format)
