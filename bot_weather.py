@@ -18,7 +18,9 @@ dp = Dispatcher()
 
 @dp.message(CommandStart())
 async def command_start_handler(message: Message) -> None:
-    await message.answer(f"Привет, {hbold(message.from_user.full_name)}! Напиши мне название города и я пришлю тебе сводку погоды!")
+    await message.answer(f"Привет, {hbold(message.from_user.full_name)}! Чтобы узнать какая сейчас погода, напишиши "
+                         f"слово 'сейчас' и название города. Чтобы узнать прогноз погоды, напиши слово 'прогноз' и "
+                         f"название города.")
 
 
 @dp.message()
@@ -83,9 +85,9 @@ async def process_language(message: Message) -> None:
                     break
             await message.reply(answer)
         else:
-            await message.send_copy(chat_id=message.chat.id)
+            print(message.text)
     except IndexError:
-        await message.send_copy(chat_id=message.chat.id)
+        print(message.text)
 
         
 async def main() -> None:
