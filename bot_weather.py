@@ -79,9 +79,9 @@ async def process_language(message: Message) -> None:
                 wind_deg = item['wind']['deg']
                 direction = int((wind_deg + 22.5) // 45 % 8)
                 pop = item['pop'] * 100
-                answer += f"{hbold(time_with_timezone_str)}, Температура воздуха {temp}C, {weather_d}, Ветер {wind_speed}м/с {winddirections[direction]} , Вероятность осадков {pop}% \n"
+                answer += f"{hbold(time_with_timezone_str)}, Температура воздуха {hbold(temp)}C, {weather_d}, Ветер {wind_speed}м/с {winddirections[direction]} , Вероятность осадков {pop}% \n"
                 count += 1
-                if count == 21:
+                if count == 17:
                     break
             await message.reply(answer)
         else:
